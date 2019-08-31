@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 //OK
 Route::get('/pkg', function () {
-    return view('Aymancontact::index');# we need the nameofpackage::theviewname
+    return view('Aymancontact::index'); # we need the nameofpackage::theviewname
 });
 
 
