@@ -1,0 +1,19 @@
+{
+    "name": "edumepro/aymancontact",
+    "description": "this is nice  pak",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ayman qudah",
+            "email": "edume@edume.pro"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Edumepro\\Aymancontact\\": "src/"
+        }
+    }
+}
