@@ -63,7 +63,13 @@
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
 
-                <h1 class="font-weight-light">This is my PACKAGE Create</h1>
+                <h1 class="font-weight-light">
+                    https://simpleicons.org/ This is my PACKAGE Create
+                    <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/simpleicons.svg" />
+                    <img height="132" width="132" src="https://unpkg.com/simple-icons@latest/icons/bit.svg" />
+
+
+                </h1>
                 <p class="lead">A great starter layout for a landing page</p>
 
                 <div class="container">
