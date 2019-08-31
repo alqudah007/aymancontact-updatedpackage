@@ -15,5 +15,13 @@
         "psr-4": {
             "Edumepro\\Aymancontact\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Edumepro\\Aymancontact\\AymancontactServiceProvider"
+            ]
+
+        }
     }
 }
