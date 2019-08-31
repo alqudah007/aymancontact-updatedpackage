@@ -19,8 +19,10 @@ class AymancontactServiceProvider extends ServiceProvider
 
 
         # to make user do some config to your package
+        # to make view also be customized by user
         $this->publishes([
             __DIR__.'/config/aymancontactconfig.php' => config_path('aymancontactconfig.php'),
+            __DIR__.'/views' => resource_path('views/vendor/aymancontactconfig'),
         ]);
 
     }
