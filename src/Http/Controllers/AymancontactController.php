@@ -58,7 +58,7 @@ class AymancontactController extends Controller
         Aymancontact::create($request->all());
 
 
-
+        # when use config we need to add the config file name
         mail::to(config('aymancontactconfig.send_email_to_var'))->send(new aymancontactMail($request->all()));
 
         return response()->redirectToRoute('aymancontact.index');
