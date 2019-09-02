@@ -43,11 +43,11 @@
                     <a class="nav-link" href="{{route('create')}}">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('address')}}">Address Geo location</a>
+                    <a class="nav-link" href="{{route('address')}}">IP(data need unserialized)</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('address2')}}">Address Geo location 2 </a>
-                    <a class="nav-link" href="{{route('address3')}}">Address Geo location 3 Guzzle</a>
+                    <a class="nav-link" href="{{route('address2')}}">IP(data is PHP-JSON) </a>
+                    <a class="nav-link" href="{{route('address3')}}">IP(Guzzle -Native JSON)</a>
                 </li>
 
             </ul>

@@ -72,16 +72,16 @@ class AymancontactController extends Controller
 
     public function address()
     {
+
         # issues --------------------------------------------------------------------------------------------------------------------------------
         # 1 - real ip (client ip) vs load balancer Ip Vs Proxy server Ip . (your server may run on loadbalncer so you will get the load blance ip)
         // https://stackoverflow.com/questions/33268683/how-to-get-client-ip-address-in-laravel-5
-        # 2 - using serialize date ( un-save php documentation ) .
+        # 2 - using serialize date ( un-save php documentation ) . this is the PHP WAY - we can get JSON by using guzzle! see address3
         # 3-  you can use JS script ! locally - remotely .
 
 
         dump(request()->ip()); // "127.0.0.1"
         dump(\Request::getClientIp(true)); // "127.0.0.1"
-
 
 
         # THE BEST AND ACCURATE WAY A
@@ -97,22 +97,9 @@ class AymancontactController extends Controller
         dd($jsona);
 
 
-
         #dd(\Opis\Closure\unserialize(file_get_contents("http://www.geoplugin.net/php.gp/?ip=$dummyip")));//OK 100%  return Array data type
         #$dataType= getType($temp);  // Array data type
         return 0;//  this will be JSON format !
-
-
-
-        #$user_ip = $_SERVER['REMOTE_ADDR'];#getenv('REMOTE_ADDR');// this return json
-        $user_ip = $_SERVER['REMOTE_ADDR'];
-        $geo = json_decode(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-        $country = $geo["geoplugin_countryName"];
-        $city = $geo["geoplugin_city"];
-        //$fulladdress = $user_ip . "####" . $geo . "###" . $country . "###" . $city;
-        dd($geo);
-
-        return 0;
 
     }
 
@@ -169,21 +156,16 @@ class AymancontactController extends Controller
 
     public function address3(){
 
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $PublicIP = '51.253.62.96';
         $response = $client->post('http://www.geoplugin.net/json.gp?ip='.$PublicIP, [
             'form_params' => [
-                /*'grant_type' => 'password',
-                'client_id' => '2', // from oauth_client table in DB
-                'client_secret' => 'TjXDMwxFn8e6AxIY4cYNhVjgBNmfAgy7EHEQD6TQ',// from oauth_client table in DB
-                'username' => $request->email, // NOTICE IT IS USERNAME FOR GUZZLE
-                'password' => $request->password,
-                'scope' => '',*/
+
             ],
         ]);
 
 
-        //dd($response);
+        dd($response);
         $fulldata= json_decode((string)$response->getBody(), true);
         dd($fulldata);
         //dd($fulldata['region']."-".$fulldata['city']);
