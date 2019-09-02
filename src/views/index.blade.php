@@ -1,4 +1,7 @@
 @extends(config('aymancontactconfig.layouts_app'))
 @section('content')
-fff
+Idnex page
+
 @stop
+
+
