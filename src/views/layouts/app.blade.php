@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/pulse/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css">
     <title>{{ config('app.name', 'package for contact us page') }}</title>
     <style>
         .masthead {
@@ -25,6 +25,7 @@
 <body>
 
 
+{{--
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">{{config('app.name', 'package for contact us page')}}</a>
@@ -61,6 +62,7 @@
         </div>
     </div>
 </nav>
+--}}
 
 <!-- Full Page Image Header with Vertically Centered Content -->
 <header class="masthead">
@@ -69,6 +71,7 @@
             <div class="col-12 text-center">
 
                 @yield('content')
+
                 <button onclick="getLocation()">Try It</button>
 
                 <p id="demo"></p>

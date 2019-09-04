@@ -22,16 +22,10 @@ class AymancontactController extends Controller
 
     public function index()
     {
-        //dump('AymancontactController INDEX');
+        # dump('AymancontactController INDEX');
+        $allcontacts = Aymancontact::all();
+        return view('Aymancontact::admin.index', ['allcontacts' => $allcontacts]);
 
-        $allmessages = Aymancontact::all();
-
-        if ($allmessages->count() > 0) {
-            return view('Aymancontact::index', ['allmessages' => $allmessages]);
-        } else {
-            return "No records";
-        }
-        //return view('Aymancontact::index');
     }
 
     public function create()

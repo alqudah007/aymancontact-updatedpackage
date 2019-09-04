@@ -3,10 +3,11 @@
     <div class="col-12 text-center">
 
         <h1 class="font-weight-light">
-            https://simpleicons.org/ This is my PACKAGE Create
+            {{-- https://simpleicons.org/ This is my PACKAGE Create
             <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/simpleicons.svg"/>
             <img height="132" width="132" src="https://unpkg.com/simple-icons@latest/icons/bit.svg"/>
-
+            --}}
+            A great starter layout for a landing page
 
         </h1>
         <p class="lead">A great starter layout for a landing page</p>
@@ -65,7 +66,7 @@
 
                             <textarea name="message" class="form-control mb-3" rows="5" id="formGroupExampleInput2"
                                       placeholder="Another input"></textarea>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block">Send</button>
                 </div>
             </form>
 

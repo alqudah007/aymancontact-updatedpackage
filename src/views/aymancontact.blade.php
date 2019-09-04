@@ -1,1 +1,1 @@
-x
+@extends('layouts.default')

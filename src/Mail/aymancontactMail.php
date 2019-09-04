@@ -13,7 +13,6 @@ class aymancontactMail extends Mailable
 
 
     #ِAyman add this
-
     public $name;
     public $mobile;
     public $message;
