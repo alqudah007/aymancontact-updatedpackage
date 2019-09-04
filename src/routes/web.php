@@ -30,10 +30,16 @@ use Illuminate\Support\Facades\Route;
 route::group(['namespace' => 'Edumepro\Aymancontact\Http\Controllers'], function () {
     // Admin route - index all the contacts
     Route::get('/contacts','AymancontactController@index');
-
     route::get('/call','AymancontactController@index')->name('aymancontact.index');
     route::POST('/store','AymancontactController@store')->name('store');
     route::GET('/create','AymancontactController@create')->name('create');
+
+
+
+    // Contact full routes with name like: contact.index
+    // Better to have small case character  in route name- route is case sensitive
+    Route::Resource('contact', 'ContactController');
+
 
 });
 

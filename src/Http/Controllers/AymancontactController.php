@@ -2,13 +2,12 @@
 
 # we need to add the following to the package to make controller works fine
 namespace Edumepro\Aymancontact\Http\Controllers;
-
-use App\Http\Controllers\Controller;
-# To Use the Model
+# To Use the Model / email
 use Edumepro\Aymancontact\mail\aymancontactMail;
 use Edumepro\Aymancontact\models\Aymancontact;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
@@ -24,14 +23,17 @@ class AymancontactController extends Controller
     {
         # dump('AymancontactController INDEX');
         $allcontacts = Aymancontact::all();
+        #return $this->get_user_ip();
+
         return view('Aymancontact::admin.index', ['allcontacts' => $allcontacts]);
+
 
     }
 
     public function create()
     {
         # return the form for create .
-        return view('Aymancontact::create'); # name of package without Provide name
+        return view('Aymancontact::create'); # name of package :: name of view
     }
 
 
@@ -61,6 +63,17 @@ class AymancontactController extends Controller
     }
 
 
+    public function get_user_ip()
+    {
+
+        $userip = \Request::ip();
+
+        $guzzleclient = new Client();
+
+        $response = $guzzleclient->post('http://www.geoplugin.net/json.gp?ip=' . $userip);
+
+        return json_decode($response->getBody(), true); // json_decode --> convert json string to array
+    }
 
 
 }

@@ -14,7 +14,7 @@ class aymancontactMail extends Mailable
 
     #ِAyman add this
     public $name;
-    public $mobile;
+    public $phone;
     public $message;
 
     /**
@@ -26,7 +26,7 @@ class aymancontactMail extends Mailable
     {
         //
         $this->name=$inputsArray['name'];
-        $this->mobile=$inputsArray['mobile'];
+        $this->mobile=$inputsArray['phone'];
         $this->message=$inputsArray['message'];
     }
 
@@ -39,7 +39,7 @@ class aymancontactMail extends Mailable
     {
         return $this->markdown('Aymancontact::mail.contact.useremail')->with([
             'name'=> $this->name,
-            'mobile'=> $this->mobile,
+            'mobile'=> $this->phone,
             'message'=> $this->message,
 
         ]);
