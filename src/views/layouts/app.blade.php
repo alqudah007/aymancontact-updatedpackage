@@ -14,7 +14,7 @@
         .masthead {
             height: 100vh;
             min-height: 500px;
-            /*background-image:  url('https://source.unsplash.com/1920x1080/?gray,abstract')*/ ;
+            /*background-image:  url('https://source.unsplash.com/1920x1080/?gray,abstract')*/;
             background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
             background-size: cover;
             background-position: center;
@@ -47,9 +47,16 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('address2')}}">IP(data is PHP-JSON) </a>
+
+                </li>
+                <li>
                     <a class="nav-link" href="{{route('address3')}}">IP(Guzzle -Native JSON)</a>
+
                 </li>
 
+                <li>
+                    <a class="nav-link" href="{{route('contrycode')}}">contrycode - IP </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -83,6 +90,7 @@
 <script>
 
     var x = document.getElementById("demo");
+
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);

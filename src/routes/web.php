@@ -10,14 +10,11 @@ Route::get('/pkg', function () {
 
 
 
-
+// This to distinguish the app route to package route
 route::group(['namespace' => 'Edumepro\Aymancontact\Http\Controllers'], function () {
     route::get('/call','AymancontactController@index')->name('aymancontact.index');
     route::POST('/store','AymancontactController@store')->name('store');
     route::GET('/create','AymancontactController@create')->name('create');
-    route::GET('/address','AymancontactController@address')->name('address');
-    route::GET('/address2','AymancontactController@address2')->name('address2');
-    route::GET('/address3','AymancontactController@address3')->name('address3');
 
 });
 
