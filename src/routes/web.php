@@ -2,6 +2,7 @@
 
 namespace Edumepro\Aymancontact\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,15 @@ route::group(['namespace' => 'Edumepro\Aymancontact\Http\Controllers'], function
 
     # route model binding is not accurate in package
     #ROUTE::get('/contact/{contact}', 'ContactController@show')->name('contact.show');
+
+
+    # HERE MAP REST API
+    Route::get('/getmap', function(){
+        $url = 'https://geocoder.api.here.com/6.2/geocode.json?searchtext=amman&app_id=5fNq0dC2PE2SMgBEOJFu&app_code=DG21ynorSUitG7LPFL11gA';
+        $guzzleclient = new Client();
+        $response = $guzzleclient->get($url);
+        return json_decode($response->getBody(),true) ;//getBody is GUZZZLE method
+    });
 
 
     // Admin route - index all the contacts

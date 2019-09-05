@@ -21,8 +21,8 @@ class CreateContactsTable extends Migration
             $table->text('message')->nullable();
             $table->string('ip')->nullable();
             $table->string('city')->nullable();
-            $table->string('region')->nullable();
             $table->string('region_code')->nullable();
+            $table->string('region_name')->nullable();
             $table->string('country_code')->nullable();
             $table->string('country_name')->nullable();
             $table->string('continent_code')->nullable();

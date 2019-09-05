@@ -49,7 +49,12 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        # 1- validate required
+        # 2- get user geo location
+        # 3- start the store procedure
+        # 4- send email
+
+
         // return $request->all();
 
         # post to this from form
@@ -64,7 +69,39 @@ class ContactController extends Controller
         //dd(config('aymancontactconfig.send_email_to_var'));
 
 
-        Contact::create($request->all());
+        # call Contact model geo() method
+
+        $contactobj = new Contact();
+
+        $geodata = $contactobj->getUserGeoLocation();
+
+        //dd($geodata['geoplugin_regionName']);
+
+
+        $inputes['name'] = $request->name;
+        #$inputes['user_id']=\Auth::user()->id();
+        $inputes['phone'] = $request->phone;
+        $inputes['message'] = $request->message;
+        $inputes['ip'] = $geodata['geoplugin_request'];
+        $inputes['city'] = $geodata['geoplugin_city'];
+        $inputes['region_code'] = $geodata['geoplugin_regionCode'];
+        $inputes['region_name'] = $geodata['geoplugin_regionName'];
+        $inputes['country_code'] = $geodata['geoplugin_countryCode'];
+        $inputes['country_name'] = $geodata['geoplugin_countryName'];
+        $inputes['continent_code'] = $geodata['geoplugin_continentCode'];
+        $inputes['continent_name'] = $geodata['geoplugin_continentName'];
+        $inputes['timezone'] = $geodata['geoplugin_timezone'];
+        $inputes['latitude'] = $geodata['geoplugin_latitude'];
+        $inputes['longitude'] = $geodata['geoplugin_longitude'];
+        $inputes['location_accuracy_radius'] = $geodata['geoplugin_locationAccuracyRadius'];
+        $inputes['currency_code'] = $geodata['geoplugin_currencyCode'];
+        $inputes['currency_symbol'] = $geodata['geoplugin_currencySymbol'];
+        $inputes['currency_symbol_utf8'] = $geodata['geoplugin_currencySymbol_UTF8'];
+        $inputes['currency_converter'] = $geodata['geoplugin_currencyConverter'];
+
+
+        //Contact::create($request->all());
+        Contact::create($inputes);
 
 
         # when use config we need to add the config file name
@@ -82,8 +119,12 @@ class ContactController extends Controller
     public function show(\Edumepro\Aymancontact\Models\Contact $contact)
     {
         //dump($id);// this is OK ok
-        dd($contact);// this is NOT Ok - ROUTE MODEL BINDING
-        return view('Aymancontact::admin.show',['contact'=>$contact]);
+        //dd($contact);// this is NOT Ok - Solution : ROUTE MODEL BINDING Midlleware to be added in route file
+
+
+        $map= $contact->getmap();
+
+        return view('Aymancontact::admin.show', ['contact' => $contact, 'map'=>$map]);
     }
 
     /**

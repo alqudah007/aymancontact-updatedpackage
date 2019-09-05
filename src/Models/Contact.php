@@ -2,6 +2,7 @@
 
 namespace Edumepro\Aymancontact\Models;
 
+use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
@@ -16,6 +17,29 @@ class Contact extends Model
         //  $this->hasMany('App\Phone')
         // $this->hasMany('App\User');# i will assume this
         // $this->hasMany('Edumepro\Aymancontact\models\Contact');
+    }
+
+    public function getUserGeoLocation()
+    {
+
+        //$userip = \Request::ip();
+        $userip ='51.253.62.96';
+
+        $guzzleclient = new Client();
+
+        $response = $guzzleclient->post('http://www.geoplugin.net/json.gp?ip=' . $userip);
+
+        return json_decode($response->getBody(), true); // json_decode --> convert json string to array
+    }
+
+
+    public function getmap(){
+
+        $url = 'https://geocoder.api.here.com/6.2/geocode.json?searchtext=200%20S%20Mathilda%20Sunnyvale%20CA&app_id=5fNq0dC2PE2SMgBEOJFu&app_code=DG21ynorSUitG7LPFL11gA';
+        $guzzleclient = new Client();
+        $response = $guzzleclient->get($url);
+        return $response;
+
     }
 
 
