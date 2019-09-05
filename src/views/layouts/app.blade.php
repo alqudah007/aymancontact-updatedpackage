@@ -25,7 +25,9 @@
 <body>
 
 
-{{--
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">{{config('app.name', 'package for contact us page')}}</a>
@@ -33,36 +35,29 @@
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('/call')}}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('create')}}">Create</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('address')}}">IP(data need unserialized)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('address2')}}">IP(data is PHP-JSON) </a>
 
                 </li>
-                <li>
-                    <a class="nav-link" href="{{route('address3')}}">IP(Guzzle -Native JSON)</a>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('contact.index')}}">contact index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('contact.create')}}">create New</a>
                 </li>
 
-                <li>
-                    <a class="nav-link" href="{{route('contrycode')}}">contrycode - IP </a>
-                </li>
             </ul>
+
+
         </div>
     </div>
 </nav>
---}}
+
+
 
 <!-- Full Page Image Header with Vertically Centered Content -->
 <header class="masthead">

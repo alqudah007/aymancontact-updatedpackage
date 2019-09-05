@@ -1,6 +1,6 @@
 <?php
 
-namespace Edumepro\Aymancontact\models;
+namespace Edumepro\Aymancontact\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

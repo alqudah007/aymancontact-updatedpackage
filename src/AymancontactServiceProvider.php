@@ -9,6 +9,7 @@ class AymancontactServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+
         # to distinguish this view for package not main view
         $this->loadViewsFrom(__DIR__.'/views','Aymancontact');
         # to distinguish this view for package not main view

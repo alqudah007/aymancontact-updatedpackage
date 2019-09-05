@@ -3,12 +3,12 @@
 # we need to add the following to the package to make controller works fine
 namespace Edumepro\Aymancontact\Http\Controllers;
 
-use Edumepro\Aymancontact\mail\aymancontactMail;
-use Edumepro\Aymancontact\models\Contact;
-# To Use the Model
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Edumepro\Aymancontact\Models\Contact;
+use Edumepro\Aymancontact\mail\aymancontactMail;
 
 
 class ContactController extends Controller
@@ -79,9 +79,11 @@ class ContactController extends Controller
      * @param \App\contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(contact $contact)
+    public function show(\Edumepro\Aymancontact\Models\Contact $contact)
     {
-        //
+        //dump($id);// this is OK ok
+        dd($contact);// this is NOT Ok - ROUTE MODEL BINDING
+        return view('Aymancontact::admin.show',['contact'=>$contact]);
     }
 
     /**
@@ -90,7 +92,7 @@ class ContactController extends Controller
      * @param \App\contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(contact $contact)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -102,7 +104,7 @@ class ContactController extends Controller
      * @param \App\contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, contact $contact)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -113,7 +115,7 @@ class ContactController extends Controller
      * @param \App\contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contact $contact)
+    public function destroy(Contact $contact)
     {
         //
     }

@@ -13,7 +13,7 @@
         <p class="lead">A great starter layout for a landing page</p>
 
         <div class="container">
-            <form action="{{route('store')}}" method="POST">
+            <form action="{{route('contact.store')}}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="form-group col-md-6">

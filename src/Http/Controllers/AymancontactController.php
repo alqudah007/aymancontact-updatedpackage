@@ -4,7 +4,7 @@
 namespace Edumepro\Aymancontact\Http\Controllers;
 # To Use the Model / email
 use Edumepro\Aymancontact\mail\aymancontactMail;
-use Edumepro\Aymancontact\models\Aymancontact;
+use Edumepro\Aymancontact\Models\Aymancontact;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
@@ -62,6 +62,10 @@ class AymancontactController extends Controller
         return response()->redirectToRoute('aymancontact.index');
     }
 
+
+    public function show(Aymancontact $aymancontact){
+        dd('$aymancontact');
+    }
 
     public function get_user_ip()
     {
