@@ -38,12 +38,20 @@ route::group(['namespace' => 'Edumepro\Aymancontact\Http\Controllers'], function
 
 
     # HERE MAP REST API
-    Route::get('/getmap', function(){
+    Route::get('/here-map-api', function(){
         $url = 'https://geocoder.api.here.com/6.2/geocode.json?searchtext=amman&app_id=5fNq0dC2PE2SMgBEOJFu&app_code=DG21ynorSUitG7LPFL11gA';
         $guzzleclient = new Client();
         $response = $guzzleclient->get($url);
         return json_decode($response->getBody(),true) ;//getBody is GUZZZLE method
     });
+
+    # HERE MAP REST API
+    Route::get('/google-map-js-api', function(){
+
+        return view('welcome') ;//getBody is GUZZZLE method
+    });
+
+
 
 
     // Admin route - index all the contacts

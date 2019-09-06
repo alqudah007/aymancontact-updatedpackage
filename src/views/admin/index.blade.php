@@ -1,19 +1,18 @@
 @extends(config('aymancontactconfig.layouts_app'))
 @section('content')
 
-    <div class="col-12 text-left">
 
-        <h1 class="font-weight-light">
-            admin.index
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
 
-        </h1>
-        <p class="lead">Manage all  the contants form requests </p>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
+                <div class="card">
+                    <div class="card-header">Manage all  the contants form requests</div>
+                </div>
+                <div class="card">
+                    <div class="">
+                    </div>
+                    <div class="card-body">
                         <table class="table  table-sm table-hover ">
                             <thead class="thead-dark">
                             <tr>
@@ -27,7 +26,7 @@
                             <tbody>
 
                             @foreach($allcontacts as $contact)
-                                {{ $loop->iteration }} /{{ $loop->count }}
+
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
                                     <td class="">{{$contact->name}}</td>
@@ -36,9 +35,12 @@
                                     <td class="">
 
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a type="button" class="btn btn-sm btn-warning" href="{{route('contact.show',$contact)}}">Show</a>
-                                            <a type="button" class="btn btn-sm btn-success" href="{{route('contact.edit',$contact)}}">Edit</a>
-                                            <a type="button" class="btn btn-sm btn-danger" href="{{route('contact.destroy',$contact)}}">Delete</a>
+                                            <a type="button" class="btn btn-sm btn-warning"
+                                               href="{{route('contact.show',$contact)}}">Show</a>
+                                            <a type="button" class="btn btn-sm btn-success"
+                                               href="{{route('contact.edit',$contact)}}">Edit</a>
+                                            <a type="button" class="btn btn-sm btn-danger"
+                                               href="{{route('contact.destroy',$contact)}}">Delete</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -49,24 +51,10 @@
                     </div>
 
                 </div>
+
             </div>
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 

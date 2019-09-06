@@ -22,8 +22,9 @@ class Contact extends Model
     public function getUserGeoLocation()
     {
 
-        //$userip = \Request::ip();
-        $userip ='51.253.62.96';
+        #$userip = \Request::ip();
+        #$userip ='51.253.62.96';
+        $userip ='72.52.87.190';
 
         $guzzleclient = new Client();
 

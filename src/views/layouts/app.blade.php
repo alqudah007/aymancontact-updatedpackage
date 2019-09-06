@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/litera/bootstrap.min.css">
     <title>{{ config('app.name', 'package for contact us page') }}</title>
     <style>
         .masthead {
@@ -28,7 +28,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top mb-3">
     <div class="container">
         <a class="navbar-brand" href="/">{{config('app.name', 'package for contact us page')}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -67,7 +67,7 @@
 
                 @yield('content')
 
-                <button onclick="getLocation()">Try It</button>
+
 
                 <p id="demo"></p>
             </div>
@@ -76,15 +76,7 @@
 </header>
 
 
-<!-- Page Content -->
-{{--<section class="py-5">
-
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-</section>--}}
+{{-- let browser detect your location --}}
 <script>
 
     var x = document.getElementById("demo");
