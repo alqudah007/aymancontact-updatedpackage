@@ -39,8 +39,14 @@
                                                href="{{route('contact.show',$contact)}}">Show</a>
                                             <a type="button" class="btn btn-sm btn-success"
                                                href="{{route('contact.edit',$contact)}}">Edit</a>
-                                            <a type="button" class="btn btn-sm btn-danger"
-                                               href="{{route('contact.destroy',$contact)}}">Delete</a>
+
+                                            <form class='d-inline' method="POST" action="{{route('contact.destroy',$contact)}}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button onclick="return confirm('Are you sure ?!')" type="submit" class="btn btn-sm btn-danger">
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

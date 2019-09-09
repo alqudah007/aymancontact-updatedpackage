@@ -28,13 +28,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 # A : route::group
-route::group(['namespace' => 'Edumepro\Aymancontact\Http\Controllers'], function () {
+route::group([
+    'namespace' => 'Edumepro\Aymancontact\Http\Controllers',
+    'middleware' =>'bindings'
+
+    ], function () {
     // Contact full routes with name like: contact.index
     // Better to have small case character  in route name- route is case sensitive
-    Route::Resource('contact', 'ContactController')->middleware('bindings');#->except('show');
+    # route model binding  in package must be explicity declare through middleware
+    Route::Resource('contact', 'ContactController');#->middleware('bindings')#->except('show');
 
-    # route model binding is not accurate in package
-    #ROUTE::get('/contact/{contact}', 'ContactController@show')->name('contact.show');
+    Route::post('contact/{contact}/answer','AnswerController@store')->name('answer.store');
+
 
 
     # HERE MAP REST API

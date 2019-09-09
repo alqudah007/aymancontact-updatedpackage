@@ -9,14 +9,14 @@ class Contact extends Model
 {
     //
 
-    protected $fillable = ['name', 'phone', 'message', 'ip', 'city', 'region', 'region_code', 'country_code', 'country_name', 'continent_code', 'continent_name', 'latitude', 'longitude', 'location_accuracy_radius', 'timezone', 'currency_code', 'currency_symbol', 'currency_symbol_utf8', 'currency_converter'];
+    protected $fillable = ['name', 'phone', 'message', 'ip', 'city', 'region_name', 'region_code', 'country_code', 'country_name', 'continent_code', 'continent_name', 'latitude', 'longitude', 'location_accuracy_radius', 'timezone', 'currency_code', 'currency_symbol', 'currency_symbol_utf8', 'currency_converter'];
 
     # Relationship definitions
-    public function contact()
+    public function answers()
     {
         //  $this->hasMany('App\Phone')
         // $this->hasMany('App\User');# i will assume this
-        // $this->hasMany('Edumepro\Aymancontact\models\Contact');
+     return   $this->hasMany('Edumepro\Aymancontact\models\Answer');
     }
 
     public function getUserGeoLocation()
