@@ -14,30 +14,32 @@ class AnswerController extends Controller
     // delete
 
 
-    public function store(Request $request,Contact $contact){
-      # 1- validate
-      # 2- use relation to store answers via contact
+    public function store(Request $request, Contact $contact)
+    {
+        # 1- validate
+        # 2- use relation to store answers via contact
 
         $request->validate([
-            'body'=>'required',
-            'uploaded_file' =>'sometimes|mimes:jpeg,png,pdf,gif|max:2048'
+            'body' => 'required',
+            'uploaded_file' => 'sometimes|mimes:jpeg,png,pdf,gif|max:2048'
         ]);
 
 
-
-        $file=$request->file('uploaded_file');
-        $new_file_name= rand() . '.' . $file->getClientOriginalExtension();
-        $file->move(storage_path('app/uploaded_files'),$new_file_name);
-
-
+        if ($request->has('uploaded_file')) {
+            $file = $request->file('uploaded_file');
+            $new_file_name = rand() . '.' . $file->getClientOriginalExtension();
+            $file->move(storage_path('app/public/uploaded_files'), $new_file_name);
+        } else {
+            $new_file_name = null;
+        }
 
 
         $contact->answers()->create([
-            'body' =>$request->body,
-            'uploaded_file_path'=>$new_file_name
+            'body' => $request->body,
+            'uploaded_file_path' => $new_file_name
         ]);
 
-        return back()->with('success','reply added and email sent !');
+        return back()->with('success', 'reply added and email sent !');
     }
 
 }
