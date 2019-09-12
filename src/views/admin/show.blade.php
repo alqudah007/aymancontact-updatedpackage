@@ -3,28 +3,44 @@
 
     <div class="col-12">
 
-        <h1 class="font-weight-light">
-            admin.show
-        </h1>
+        {{-- <h1 class="font-weight-light">
+             admin.show
+         </h1>--}}
         <p class="lead"></p>
 
 
         <div class="container-fluid content-row">
             <div class="row">
 
-
                 <div class="col-sm-8 ">
                     <div class="card {{--h-100--}} ">
                         <div class="card-header">
-                            <i class="far fa-clock text-info"></i>
-                            <h5> Name : {{$contact->name}}</h5>
+                            <blockquote class="blockquote">
+
+                                <h3 class="">
+                                    <i class="fas fa-user text-info mr-1"></i> NAME : {{$contact->name}}
+                                </h3>
+                                <footer class="blockquote-footer pt-3">
+
+                                    <i class="far fa-clock text-info"></i>Date
+                                    : {{$contact->created_at->format('d.m.Y')}} |
+                                    <i class="far fa-clock text-info"></i>Time
+                                    : {{$contact->created_at->format('H:i:s')}} |
+                                    <i class="fas fa-users text-info"></i> {{$contact->created_at->diffForHumans()}}
+                                </footer>
+                            </blockquote>
+
+
+                            {{-- <h5><i class="fas fa-user text-info mr-1"></i> Name : {{$contact->name}}</h5>--}}
                         </div>
                         <div class="card-body">
-                            <small class="text-muted cat ">
-                                <i class="far fa-clock text-info"></i>Date : {{$contact->created_at->format('d.m.Y')}} |
-                                <i class="far fa-clock text-info"></i>Time : {{$contact->created_at->format('H:i:s')}} |
-                                <i class="fas fa-users text-info"></i> {{$contact->created_at->diffForHumans()}}
-                            </small>
+
+
+                            {{-- <small class="text-muted ">
+                                 <i class="far fa-clock text-info"></i>Date : {{$contact->created_at->format('d.m.Y')}} |
+                                 <i class="far fa-clock text-info"></i>Time : {{$contact->created_at->format('H:i:s')}} |
+                                 <i class="fas fa-users text-info"></i> {{$contact->created_at->diffForHumans()}}
+                             </small>--}}
                             <div class="mt-1">
                                 <textarea rows="10" readonly class="form-control">{{$contact->message}}</textarea>
                             </div>
@@ -37,7 +53,7 @@
 
                     <div class="card mt-3">
                         {{-- <div class="card-header">Responses for this contact</div>--}}
-                        <div class="card-body">
+                        <div class="card-body ">
                             @include('Aymancontact::answer.create', ['contact' => $contact])
                         </div>
                     </div>
@@ -64,7 +80,7 @@
                                 </div>
                                 <div class="col-6 text-right">
                                     {{--Add New User--}}
-                                    <a href="#" class="btn btn-dark ">
+                                    <a href="{{route('contact.index')}}" class="btn btn-dark ">
                                         <i class="fas fa-long-arrow-alt-left"></i> Back
                                     </a>
                                 </div>
@@ -155,11 +171,7 @@
         </div>
 
 
-
-
-
-
-</div>
+    </div>
 
 
 

@@ -20,7 +20,7 @@
 
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css">
     <title>{{ config('app.name', 'package for contact us page') }}</title>
     <style>
         .mastheadx {
@@ -44,9 +44,15 @@
 
 
 
-<nav class="navbar navbar-expand-lg   shadow  mb-5">
+<nav class="navbar navbar-expand-lg border-dark  sticky-top navbar-dark bg-primary mb-4">
     <div class="container">
-        <a class="navbar-brand" href="/">{{config('app.name', 'package for contact us page')}}</a>
+        <a class="navbar-brand" href="#">
+            <div class="d-inline-block align-top">
+              <i class="fas fa-1x fa-lock" ></i>
+            {{config('app.name', 'package for contact us page')}}
+            </div>
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

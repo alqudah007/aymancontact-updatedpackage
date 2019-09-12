@@ -10,7 +10,6 @@
             Happy User CRM<sup>👦</sup>
 
         </h1>
-        <p class="lead">A great way to make users Happy 😍 3</p>
 
         <div class="container">
             {{-- success - error section --}}
