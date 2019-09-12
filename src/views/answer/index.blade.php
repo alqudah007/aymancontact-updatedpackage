@@ -4,7 +4,7 @@
             <h5 class="mb-0">
                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                         aria-controls="collapseOne">
-                    SHOW #1
+                   +++ Replies
                 </button>
             </h5>
         </div>
@@ -15,12 +15,7 @@
                 {{--XXXX--}}
 
 
-                <div class="card  mt-3">
-                    <div class="card-header">Responses for this contact</div>
-
-                    <div class="card-body">
-
-
+                <div class="mt-3">
                         @foreach($contact->answers as $answer)
 
                             <label for="formGroupExampleInput2 text-left">
@@ -50,7 +45,6 @@
                             </div>
                             <hr>
                         @endforeach
-
                         {{--  # asset recommended by laravel --->storage
                                 # we do symbolic storage\app\public\ ==>storage
 
@@ -64,9 +58,6 @@
                                 #--- public
                                 <img src="{{asset('imgs/demo.jpg')}}" width="150px">
                                 <img src="{{asset('demo222.jpg')}}" width="150px">--}}
-
-
-                    </div>
                 </div>
 
 
@@ -76,6 +67,8 @@
             </div>
         </div>
     </div>
+
+
 
 
 </div>

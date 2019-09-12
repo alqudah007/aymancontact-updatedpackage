@@ -64,6 +64,8 @@ class ContactController extends Controller
             'phone' => 'required',
             'message' => 'required',
         ]);
+
+
         //dd(config('app.timezone'));
         //dump(config('aymancontactconfig.send_email_to_var'));
         //dd(config('aymancontactconfig.send_email_to_var'));
@@ -107,7 +109,9 @@ class ContactController extends Controller
         # when use config we need to add the config file name
         mail::to(config('aymancontactconfig.send_email_to_var'))->send(new aymancontactMail($request->all()));
 
-        return response()->redirectToRoute('contact.index');
+
+        return back()->with('success','Created and Email Sent !');
+        #return response()->redirectToRoute('contact.index');
     }
 
     /**

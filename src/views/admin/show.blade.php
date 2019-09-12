@@ -8,6 +8,7 @@
         </h1>
         <p class="lead"></p>
 
+
         <div class="container-fluid content-row">
             <div class="row">
 
@@ -35,14 +36,14 @@
                     {{--REPLIES SECTION--}}
 
                     <div class="card mt-3">
-                       {{-- <div class="card-header">Responses for this contact</div>--}}
+                        {{-- <div class="card-header">Responses for this contact</div>--}}
                         <div class="card-body">
                             @include('Aymancontact::answer.create', ['contact' => $contact])
                         </div>
                     </div>
 
 
-                      @include('Aymancontact::answer.index', ['contact' => $contact])
+                    @include('Aymancontact::answer.index', ['contact' => $contact])
 
 
                 </div>
@@ -50,7 +51,27 @@
 
                 <div class="col-sm-4 ">
                     <div class="card h-100">
-                        <h5 class="card-header">Detail's</h5>
+                        <div class="card-header">
+
+
+                            <div class="row">
+                                <div class="col-6 ">
+
+                                    <h3 class="d-inline">
+                                        Detail's
+
+                                    </h3>
+                                </div>
+                                <div class="col-6 text-right">
+                                    {{--Add New User--}}
+                                    <a href="#" class="btn btn-dark ">
+                                        <i class="fas fa-long-arrow-alt-left"></i> Back
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
                         <div class="card-body">
                             <ul class="list-group ">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -113,7 +134,6 @@
 
 
                         </div>
-
                         <div class="card-body">
 
                             <div id="Container"
@@ -127,7 +147,6 @@
                             </div>
                         </div>
 
-
                     </div>
                 </div>
 
@@ -140,7 +159,7 @@
 
 
 
-
+</div>
 
 
 

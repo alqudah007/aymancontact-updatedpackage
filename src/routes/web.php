@@ -27,10 +27,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-# A : route::group
+# A : route::group       in PKG in need web to make validation route $erros available to see in blade
 route::group([
     'namespace' => 'Edumepro\Aymancontact\Http\Controllers',
-    'middleware' =>'bindings'
+    'middleware' =>['bindings','web']
 
     ], function () {
     // Contact full routes with name like: contact.index

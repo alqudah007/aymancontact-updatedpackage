@@ -20,17 +20,21 @@
 
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css">
     <title>{{ config('app.name', 'package for contact us page') }}</title>
     <style>
-        .masthead {
-            height: 100vh;
-            min-height: 500px;
+        .mastheadx {
+            min-height: 100vh;
+            /*min-height: 500px;*/
             /*background-image:  url('https://source.unsplash.com/1920x1080/?gray,abstract')*/;
             background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
             background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed !important;
         }
     </style>
 </head>
@@ -40,7 +44,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top mb-3">
+<nav class="navbar navbar-expand-lg   shadow  mb-5">
     <div class="container">
         <a class="navbar-brand" href="/">{{config('app.name', 'package for contact us page')}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -72,16 +76,16 @@
 
 
 <!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
+<header class="masthead ">
+    <div class="container">
+        <div class="row align-items-center">
             <div class="col-12 ">
 
                 @yield('content')
 
 
 
-                <p id="demo"></p>
+
             </div>
         </div>
     </div>
@@ -106,5 +110,6 @@
             "<br>Longitude: " + position.coords.longitude;
     }
 </script>
+<p id="demo"></p>
 </body>
 </html>

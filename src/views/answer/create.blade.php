@@ -1,4 +1,13 @@
-<div class="">
+<div class="body">
+
+
+    {{-- success - error section --}}
+    <div class="text-left">
+        @include('Aymancontact::layouts._error')
+        @include('Aymancontact::layouts._success')
+    </div>
+
+
     <form action="{{route('answer.store',$contact)}}" method="POST" enctype="multipart/form-data">
         @CSRF
         {{--<label for="formGroupExampleInput2">Enter the reply</label>--}}
@@ -27,6 +36,9 @@
     </form>
 
 
+
+
+    {{--    CK EDITOR  --}}
     <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 
     <script>

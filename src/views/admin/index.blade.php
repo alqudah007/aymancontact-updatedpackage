@@ -7,13 +7,17 @@
             <div class="col-md-12 text-left">
 
                 <div class="card">
-                    <div class="card-header">Manage all  the contants form requests</div>
+                    <div class="card-header">Manage all the contants form requests</div>
                 </div>
+
+
                 <div class="card">
-                    <div class="">
-                    </div>
-                    <div class="card-body">
-                        <table class="table  table-sm table-hover ">
+
+                    @include('Aymancontact::admin._map',['contact' => $allcontacts])
+
+
+                    <div class="card-body  ">
+                        <table class="table table-sm table-hover table-responsive">
                             <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -40,10 +44,12 @@
                                             <a type="button" class="btn btn-sm btn-success"
                                                href="{{route('contact.edit',$contact)}}">Edit</a>
 
-                                            <form class='d-inline' method="POST" action="{{route('contact.destroy',$contact)}}">
+                                            <form class='d-inline' method="POST"
+                                                  action="{{route('contact.destroy',$contact)}}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button onclick="return confirm('Are you sure ?!')" type="submit" class="btn btn-sm btn-danger">
+                                                <button onclick="return confirm('Are you sure ?!')" type="submit"
+                                                        class="btn btn-sm btn-danger">
                                                     Delete
                                                 </button>
                                             </form>
@@ -55,6 +61,9 @@
                             </tbody>
                         </table>
                     </div>
+
+
+
 
                 </div>
 

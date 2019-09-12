@@ -7,12 +7,18 @@
             <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/simpleicons.svg"/>
             <img height="132" width="132" src="https://unpkg.com/simple-icons@latest/icons/bit.svg"/>
             --}}
-            A great starter layout for a landing page
+            Happy User CRM<sup>👦</sup>
 
         </h1>
-        <p class="lead">A great starter layout for a landing page</p>
+        <p class="lead">A great way to make users Happy 😍 3</p>
 
         <div class="container">
+            {{-- success - error section --}}
+            <div class="text-left">
+                @include('Aymancontact::layouts._error')
+                @include('Aymancontact::layouts._success')
+            </div>
+
             <form action="{{route('contact.store')}}" method="POST">
                 @CSRF
                 <div class="row">
@@ -63,6 +69,9 @@
 
 
         </div>
+
+
+
 
     </div>
 
